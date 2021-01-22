@@ -15,12 +15,12 @@ namespace GenericsIntro
             Console.WriteLine(isimler.Count);
 
             MyList<string> languages = new MyList<string>();
-            languages.Add("Seyit");
-            languages.Add("Ezgi");
-            languages.Add("Burak");
-            languages.Add("Emir");
-            languages.Add("Taha");
-            languages.Add("Ömer");
+            languages.Add("C#");
+            languages.Add("Java");
+            languages.Add("Javascript");
+            languages.Add("Php");
+            languages.Add("Python");
+            languages.Add("Swift");
             Console.WriteLine(languages.Count);
 
             Console.ReadLine();
