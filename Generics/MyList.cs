@@ -2,35 +2,35 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GenericsIntro
+namespace Generics
 {
     class MyList<T>
     {
-         T[] items;
+        T[] _array;
 
-         public MyList()
-         {
-             items = new T[0];
-         }
+        public MyList()
+        {
+            _array = new T[0];
+        }
+       
         public void Add(T item)
         {
-            T[] tempArray = items;
-            items = new T[items.Length+1];
+            T[] tempArray = _array;
+            _array = new T[_array.Length + 1];
             for (int i = 0; i < tempArray.Length; i++)
             {
-                items[i] = tempArray[i];
+                _array[i] = tempArray[i];
             }
 
-            items[items.Length - 1] = item;
+            _array[_array.Length - 1] = item;
         }
 
         public int Count
         {
             get
             {
-                return items.Length;
+                return _array.Length;
             }
         }
-
     }
 }
