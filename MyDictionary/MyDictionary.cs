@@ -7,38 +7,38 @@ namespace MyDictionary
 {
     class MyDictionary<TKey, TValue>
     {
-        TKey[] keys;
-        TValue[] values;
+        TKey[] _keys;
+        TValue[] _values;
 
+        
         public MyDictionary()
         {
-            keys = new TKey[0];
-            values= new TValue[0];
+            _keys = new TKey[0];
+            _values = new TValue[0];
         }
 
         public void Add(TKey key, TValue value)
         {
-            TKey[] tempKeys = keys;
-            TValue[] tempValues = values;
+            TKey[] tempKeys = _keys;
+            TValue[] tempValues = _values;
+            _keys = new TKey[_keys.Length + 1];
+            _values = new TValue[_values.Length + 1];
 
-            keys = new TKey[keys.Length + 1];
-            values = new TValue[values.Length + 1];
-
-            for (int i = 0; i < tempKeys.Length; i++)
+            for (int i = 0; i < tempValues.Length; i++)
             {
-                keys[i] = tempKeys[i];
-                values[i] = tempValues[i];
+                _keys[i] = tempKeys[i];
+                _values[i] = tempValues[i];
             }
 
-            keys[keys.Length - 1] = key;
-            values[values.Length - 1] = value;
+            _keys[_keys.Length - 1] = key;
+            _values[_values.Length - 1] = value;
         }
 
         public TKey[] Keys
         {
             get
             {
-                return keys;
+                return _keys;
             }
         }
 
@@ -46,7 +46,7 @@ namespace MyDictionary
         {
             get
             {
-                return values;
+                return _values;
             }
         }
     }
