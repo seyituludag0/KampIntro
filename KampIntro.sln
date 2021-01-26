@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfacesDemo", "Interface
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance", "Inheritance\Inheritance.csproj", "{CA3EC067-B086-4EA9-A7A2-2F30E86497C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces2", "Interfaces2\Interfaces2.csproj", "{4D632AD3-7CE7-4E2B-9278-795E35941F70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces2", "Interfaces2\Interfaces2.csproj", "{4D632AD3-7CE7-4E2B-9278-795E35941F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeManagementSystem", "CoffeeManagementSystem\CoffeeManagementSystem.csproj", "{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{4D632AD3-7CE7-4E2B-9278-795E35941F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D632AD3-7CE7-4E2B-9278-795E35941F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D632AD3-7CE7-4E2B-9278-795E35941F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
