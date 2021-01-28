@@ -4,11 +4,11 @@ using System.Text;
 
 namespace OOP3
 {
-    public class TasitKrediManager : IKrediManager
+    public class EmlakKrediManager : IKrediManager
     {
         public void Hesapla()
         {
-            Console.WriteLine("Taşıt kredisi ödeme planı yapıldı");
+            Console.WriteLine("Emlak kredisi ödeme planı yapıldı");
         }
     }
 }

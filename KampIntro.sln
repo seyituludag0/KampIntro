@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance", "Inheritance\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces2", "Interfaces2\Interfaces2.csproj", "{4D632AD3-7CE7-4E2B-9278-795E35941F70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeManagementSystem", "CoffeeManagementSystem\CoffeeManagementSystem.csproj", "{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeManagementSystem", "CoffeeManagementSystem\CoffeeManagementSystem.csproj", "{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameProject", "GameProject\GameProject.csproj", "{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A229A06-3C7A-47D7-84C4-15FB6A8D7541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

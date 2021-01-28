@@ -4,11 +4,11 @@ using System.Text;
 
 namespace OOP3
 {
-    class DatabaseLoggerService : ILoggerService
+    public class FileLoggerManager:ILoggerService
     {
         public void Log()
         {
-            Console.WriteLine("Veritabanına loglandı.");
+            Console.WriteLine("Dosyaya loglandı");
         }
     }
 }

@@ -6,9 +6,9 @@ namespace OOP2
 {
     class CustomerManager
     {
-        public void Add()
+        public void Add(Musteri musteri)
         {
-
+            Console.WriteLine("Müşteri Eklendi");
         }
     }
 }

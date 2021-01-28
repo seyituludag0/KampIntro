@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OOP3
+namespace GameProject.Abstract
 {
-    public interface ILoggerService
+    public interface IEntity
     {
-        void Log();
     }
 }
