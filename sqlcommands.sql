@@ -231,3 +231,65 @@ WHERE Country='Germany'
 ORDER BY City
 -- hem "Müşteriler" hem de "Tedarikçiler" tablosundan Alman şehirlerini (yalnızca farklı değerler) döndürür
 
+SELECT COUNT(CustomerID) MüşteriSayısı, Country FROM Customers GROUP BY Country
+-- her ülkedeki müşteri sayısını listeler
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC
+-- her ülkedeki müşteri sayısını yüksekten düşüğe doğru sıralanmış olarak listeler
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5
+-- her ülkedeki müşteri sayısını listeler. Yalnızca 5'ten fazla müşterisi olan ülkeleri dahil eder
+
+SELECT CompanyName FROM Suppliers 
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND UnitPrice < 20)
+
+
+SELECT ProductName FROM Products WHERE ProductID = ANY (SELECT ProductID FROM [Order Details] WHERE Quantity = 10)
+-- OrderDetails tablosunda miktar = 10 olan HERHANGİ bir kayıt bulursa ürün adlarını listeler
+
+SELECT ProductName FROM Products WHERE ProductID = ALL (SELECT ProductID FROM [Order Details] WHERE Quantity = 10)
+-- TRUE değerini döndürür ve OrderDetails tablosundaki TÜM kayıtların miktar = 10 olması durumunda ürün adlarını listeler 
+-- (bu nedenle, OrderDetails tablosundaki TÜM kayıtlarda miktar = 10 olmadığı için bu örnek FALSE döndürür)
+
+
+SELECT * INTO CustomersBackup2017 FROM Customers;
+-- SELECT INTO deyimi, bir tablodaki verileri yeni bir tabloya kopyalar.
+select * from CustomersBackup2017
+
+SELECT ContactTitle, CompanyName INTO CustomersBackup2017 FROM Customers
+
+SELECT * INTO CustomersGermany FROM Customers WHERE Country = 'Germany'
+-- yalnızca Alman müşterileri yeni bir tabloya kopyalar
+select * from CustomersGermany
+
+SELECT Customers.CustomerName, Orders.OrderID
+INTO CustomersOrderBackup2017
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+-- birden fazla tablodaki verileri yeni bir tabloya kopyalar
+
+INSERT INTO Customers (CustomerName, City, Country) SELECT SupplierName, City, Country FROM Suppliers
+-- "Tedarikçiler" i "Müşteriler" e kopyalar
+
+SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 30 THEN 'Miktar 30 dan fazla'
+    WHEN Quantity = 30 THEN 'Miktar 30'
+    ELSE 'Miktar 30 un altında'
+END AS QuantityText
+FROM [Order Details]
+
+----------------------------------------------------------
+
+SELECT CustomerID, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END)
+-- müşterileri şehre göre sıralayacaktır. Ancak, Şehir NULL ise, Ülkeye göre sırala
+
+
+SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder) FROM Products
+-- "UnitsOnOrder" değerlerinden herhangi biri NULL ise, sonuç NULL olacaktır
