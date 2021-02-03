@@ -35,7 +35,7 @@ namespace LinqProject
 
             //var result2 = products.FindAll(p => p.ProductName.Contains("book"));
             //Console.WriteLine(result2.Count);
-                                                                              // Yukardan aşağı
+            // Yukardan aşağı
             //var result3 = products.Where(p=>p.ProductName.Contains("top")).OrderByDescending(p=>p.UnitPrice
             //).ThenByDescending(p=>p.ProductName);
             //foreach (var product in result3)
@@ -45,19 +45,28 @@ namespace LinqProject
 
 
 
-            var result4 = from p in products
-                where p.UnitPrice > 6000
-                                    //ascending= en azdan en çoğa göre          //descending= en çoktan en aza göre
-                orderby p.UnitPrice descending 
-                select p;
+            //var result4 = from p in products
+            //              where p.UnitPrice > 6000
+            //              //ascending= en azdan en çoğa göre          //descending= en çoktan en aza göre
+            //              orderby p.UnitPrice descending, p.ProductName ascending
+            //              select new ProductDto { ProductId = p.ProductId, ProductName = p.ProductName, UnitPrice = p.UnitPrice };
 
-            foreach (var product in result4)
+            //foreach (var product in result4)
+            //{
+            //    Console.WriteLine(product.ProductName + "\t" + product.UnitPrice);
+            //}
+
+            var result5 = from p in products
+                join c in categories
+                    on p.CategoryId equals c.CategoryId
+                select new ProductDto {ProductId = p.ProductId, ProductName = p.ProductName, CategoryName = c.CategoryName, UnitPrice = p.UnitPrice};
+
+            foreach (var productDto in result5)
             {
-                Console.WriteLine(product.ProductName + "\t" + product.UnitPrice);
+                Console.WriteLine("Product Id: " + productDto.ProductId + " Product Name: " + productDto.ProductName + " CategoryName: " + productDto.CategoryName + " Unit Price: " + productDto.UnitPrice);
             }
 
-
-                   Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }
