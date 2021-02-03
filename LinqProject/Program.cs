@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using LinqProject.Concrete;
 using LinqProject.Entities;
 
@@ -17,17 +18,46 @@ namespace LinqProject
 
             List<Product> products = new List<Product>
             {
-                new Product{ProductId = 1, ProductName = "Hp Work Notebook", CategoryId = 1, QuantityPerUnit = "8 GB RAM" ,UnitsInStock = 1500, UnitPrice = 500},
-                new Product{ProductId = 2, ProductName = "Hp Game Notebook", CategoryId = 1, QuantityPerUnit = "16 GB RAM" ,UnitsInStock = 1500, UnitPrice = 15000},
-                new Product{ProductId = 3, ProductName = "Xiaomi Note 9 Pro", CategoryId = 2, QuantityPerUnit = "6 GB RAM" ,UnitsInStock = 5900, UnitPrice = 3000},
-                new Product{ProductId = 4, ProductName = "Xiaomi Note 8", CategoryId = 2, QuantityPerUnit = "3 GB RAM" ,UnitsInStock = 10000, UnitPrice = 2000},
-                new Product{ProductId = 5, ProductName = "iPhone 12", CategoryId = 1, QuantityPerUnit = "16 GB RAM" ,UnitsInStock = 2, UnitPrice = 15000},
+                new Product{ProductId = 1, ProductName = "Acer Laptop", CategoryId = 1, QuantityPerUnit = "8 GB RAM" , UnitPrice = 10000,UnitsInStock = 1500},
+                new Product{ProductId = 2, ProductName = "Asus Laptop", CategoryId = 1, QuantityPerUnit = "16 GB RAM" ,UnitPrice = 18000,UnitsInStock = 1500 },
+                new Product{ProductId = 3, ProductName = "Hp Laptop", CategoryId = 2, QuantityPerUnit = "6 GB RAM" ,UnitPrice = 18000,UnitsInStock = 5900 },
+                new Product{ProductId = 4, ProductName = "Xiaomi Note 8", CategoryId = 2, QuantityPerUnit = "3 GB RAM" , UnitPrice = 2000,UnitsInStock = 10000},
+                new Product{ProductId = 5, ProductName = "iPhone 12", CategoryId = 1, QuantityPerUnit = "16 GB RAM" , UnitPrice = 15000,UnitsInStock = 2},
             };
-
             ProductManager productManager = new ProductManager();
             productManager.GetProducts(products);
 
-            Console.ReadLine();
+            //var result = products.Any(p => p.ProductName == "iPhone 12");
+            //Console.WriteLine(result);
+
+            //var result1 = products.Find(p => p.ProductId == 1);
+            //Console.WriteLine(result1.ProductName);
+
+            //var result2 = products.FindAll(p => p.ProductName.Contains("book"));
+            //Console.WriteLine(result2.Count);
+                                                                              // Yukardan aşağı
+            //var result3 = products.Where(p=>p.ProductName.Contains("top")).OrderByDescending(p=>p.UnitPrice
+            //).ThenByDescending(p=>p.ProductName);
+            //foreach (var product in result3)
+            //{
+            //    Console.WriteLine(product.ProductName + "\t" + product.UnitPrice);
+            //}
+
+
+
+            var result4 = from p in products
+                where p.UnitPrice > 6000
+                                    //ascending= en azdan en çoğa göre          //descending= en çoktan en aza göre
+                orderby p.UnitPrice descending 
+                select p;
+
+            foreach (var product in result4)
+            {
+                Console.WriteLine(product.ProductName + "\t" + product.UnitPrice);
+            }
+
+
+                   Console.ReadLine();
         }
     }
 }

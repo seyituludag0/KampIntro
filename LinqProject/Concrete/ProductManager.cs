@@ -11,22 +11,22 @@ namespace LinqProject.Concrete
     {
         public List<Product> GetProducts(List<Product> products)
         {
-            Console.WriteLine("-----------Algoritmik----------");
+            //Console.WriteLine("-----------Algoritmik----------");
 
-            foreach (var product in products)
-            {
-                if (product.UnitPrice > 500 && product.UnitsInStock > 3)
-                {
-                    Console.WriteLine("Product Name: " + product.ProductName);
-                }
-            }
-            Console.WriteLine("\n" + "-----------Linq----------");
+            //foreach (var product in products)
+            //{
+            //    if (product.UnitPrice > 500 && product.UnitsInStock > 3)
+            //    {
+            //        Console.WriteLine("Product Name: " + product.ProductName);
+            //    }
+            //}
+            //Console.WriteLine("\n" + "-----------Linq----------");
 
-            var result = products.Where(p=>p.UnitPrice>500 && p.UnitsInStock>3);
-            foreach (var product in result)
-            {
-                Console.WriteLine("Product Name: " + product.ProductName + "Unit Price: " + product.UnitPrice + " Stock: " + product.UnitsInStock);
-            }
+            //var result = products.Where(p=>p.UnitPrice>500 && p.UnitsInStock>3);
+            //foreach (var product in result)
+            //{
+            //    Console.WriteLine("Product Name: " + product.ProductName + "Unit Price: " + product.UnitPrice + " Stock: " + product.UnitsInStock);
+            //}
 
 
              
