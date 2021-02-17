@@ -51,7 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeManagementSystem", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameProject", "GameProject\GameProject.csproj", "{E1305168-383A-43E2-8D0D-4BBC4C1EAF96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqProject", "LinqProject\LinqProject.csproj", "{62AF1466-A89E-48B5-8A65-49778A349010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqProject", "LinqProject\LinqProject.csproj", "{62AF1466-A89E-48B5-8A65-49778A349010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkDemo", "EntityFrameworkDemo\EntityFrameworkDemo.csproj", "{FDB8798A-D197-458C-9C5B-78668417C704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{62AF1466-A89E-48B5-8A65-49778A349010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62AF1466-A89E-48B5-8A65-49778A349010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62AF1466-A89E-48B5-8A65-49778A349010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB8798A-D197-458C-9C5B-78668417C704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB8798A-D197-458C-9C5B-78668417C704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB8798A-D197-458C-9C5B-78668417C704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB8798A-D197-458C-9C5B-78668417C704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

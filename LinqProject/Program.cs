@@ -59,11 +59,14 @@ namespace LinqProject
             var result5 = from p in products
                 join c in categories
                     on p.CategoryId equals c.CategoryId
+                    where p.UnitPrice>5000
+                orderby p.UnitPrice descending 
                 select new ProductDto {ProductId = p.ProductId, ProductName = p.ProductName, CategoryName = c.CategoryName, UnitPrice = p.UnitPrice};
 
             foreach (var productDto in result5)
             {
-                Console.WriteLine("Product Id: " + productDto.ProductId + " Product Name: " + productDto.ProductName + " CategoryName: " + productDto.CategoryName + " Unit Price: " + productDto.UnitPrice);
+                //Console.WriteLine("Product Id: " + productDto.ProductId + " Product Name: " + productDto.ProductName + " CategoryName: " + productDto.CategoryName + " Unit Price: " + productDto.UnitPrice);
+                Console.WriteLine("{0} --- {1}---- {2}", productDto.ProductName, productDto.CategoryName, productDto.UnitPrice);
             }
 
             Console.ReadLine();
